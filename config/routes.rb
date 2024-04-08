@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'fare#index'
-  resources :fare
+  root 'fares#index'
+  resources :fares
 end
