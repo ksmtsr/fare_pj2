@@ -18,6 +18,6 @@ class FaresController < ApplicationController
 
   private
     def fare_params
-      params.require(:fare).permit(:routeA, :routeB, :transportation, :amount, :remarks)
+      params.require(:fare).permit(:date, :routeA, :routeB, :transportation, :amount, :remarks)
     end
 end

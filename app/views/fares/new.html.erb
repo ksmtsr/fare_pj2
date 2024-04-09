@@ -2,7 +2,7 @@
   <div class="fw-bold text-secondary display-5 mt-5 mb-5">
     交通費申請
   </div>
-  <%= form_with model: @fares, url: fares_path, method: :post do |f| %>
+  <%= form_with model: @fare, url: fares_path, method: :post do |f| %>
     <div class="row gy-2 gx-3">
       <div class="col-auto">
         <%= f.label :date, "日付", class: 'control-label' %>
@@ -19,7 +19,7 @@
       <div class="col-auto">
         <%= f.label :transportation, "交通手段", class: 'control-label' %>
         <%= f.select :transportation, [["電車", "電車"], ["バス", "バス"], ["新幹線", "新幹線"], ["タクシー", "タクシー"]],
-        { include_blank: "選択して下さい", required: true }, { class: 'form-select' }  %>
+        { include_blank: "選択して下さい" }, { class: "form-select", required: true }  %>
       </div>
       <div class="col-auto">
         <%= f.label :amount, "金額", class: 'control-label' %>
@@ -31,7 +31,8 @@
       </div>
     </div>
     <div class="text-center mt-3">
-        <%= f.submit "申請する", class: "btn btn-secondary", style: "width: 150px; margin-top: 20px;" %>
+        <%= link_to "戻る", root_path, class: "btn btn-secondary mt-20px;" %>
+        <%= f.submit "申請する", class: "btn btn-secondary", style: "width: 150px; mt-20px;" %>
     </div>
   <% end %>
 </div>

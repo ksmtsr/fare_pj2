@@ -1,1 +1,28 @@
-<%= link_to "申請する", new_fare_path %>
+<div class="container">
+  <div class="fw-bold text-secondary display-5 mt-5 mb-4">
+    交通費清算書
+  </div>
+  <%= link_to "申請する", new_fare_path, class: "btn btn-lg btn-secondary mb-3" %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>利用区間</th>
+        <th>交通手段</th>
+        <th>金額</th>
+        <th>備考</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @fares.each do |fare| %>
+      <tr>
+        <td><%= fare.date %></td>
+        <td><%= fare.routeA %>～<%= fare.routeB%></td>
+        <td><%= fare.transportation %></td>
+        <td><%= fare.amount %></td>
+        <td><%= fare.remarks %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </Table>
+</div>
