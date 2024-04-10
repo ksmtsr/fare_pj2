@@ -3,7 +3,7 @@
     交通費申請
   </div>
   <%= form_with model: @fare, url: fares_path, method: :post do |f| %>
-    <div class="row gy-2 gx-3">
+    <div class="row mb-2 gy-2 gx-3">
       <div class="col-auto">
         <%= f.label :date, "日付", class: 'control-label' %>
         <%= f.date_field :date, class: 'form-control', required: true %>
@@ -30,9 +30,11 @@
         <%= f.text_field :remarks, class: "form-control" %>
       </div>
     </div>
+    <div id="additional-fields"></div>
+    <button type="button" class="btn btn-secondary add-row">入力フォームを追加</button>
     <div class="text-center mt-3">
-        <%= link_to "戻る", root_path, class: "btn btn-secondary mt-20px;" %>
-        <%= f.submit "申請する", class: "btn btn-secondary", style: "width: 150px; mt-20px;" %>
+        <%= link_to "戻る", root_path, class: "btn btn-secondary" %>
+        <%= f.submit "申請する", class: "btn btn-secondary", style: "width: 300px;" %>
     </div>
   <% end %>
 </div>

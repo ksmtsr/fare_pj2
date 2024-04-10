@@ -1,8 +1,5 @@
 class FaresController < ApplicationController
-  def index
-    @fares = Fare.all
-  end
-
+  
   def new
     @fare = Fare.new
   end
@@ -14,6 +11,17 @@ class FaresController < ApplicationController
     else
       render :new
     end
+  end
+
+  def index
+    @fares = Fare.all
+    @total_amount = @fares.sum(:amount)
+  end
+
+  def destroy
+    @fare = Fare.find(params[:id])
+    @fare.destroy
+      redirect_to root_path
   end
 
   private
